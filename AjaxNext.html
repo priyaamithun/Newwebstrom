@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Ajax</title>
+</head>
+<body>
+<div id="showSongs"> <br></div>
+
+<input type="button" onclick="previous()" value="<<">
+<input type="button" onclick="next()" value=">>">
+<script>
+
+    var i = 0;
+displaySong(i);
+
+function displaySong(i){
+    var xttp = new XMLHttpRequest();
+    xttp.onreadystatechange = function(){
+      if(this.readyState== 4 && this.status== 200){
+          myFunction1(this, i);
+      }
+    };
+xttp.open("GET","Ajax.xml",true);
+xttp.send();
+
+}
+
+function myFunction1(xml,i) {
+    var xmlDoc = xml.responseXML;
+    x = xmlDoc.getElementsByTagName("SONG");
+
+    document.getElementById("showSongs").innerHTML = "Artist : " + x[i].getElementsByTagName("ARTIST")[0].childNodes[0].nodeValue + "<br>Title : " + x[i].getElementsByTagName("TITLE")[0].childNodes[0].nodeValue +
+        "<br> Year : " + x[i].getElementsByTagName("YEAR")[0].childNodes[0].nodeValue;
+
+}
+
+function previous ()
+{
+    if(i < x.length-1){
+        i++;
+        displaySong(i);
+    }
+}
+function next(){
+    if(i > 0){
+        i--;
+        displaySong(i);
+    }
+}
+
+
+
+</script>
+
+</body>
+</html>

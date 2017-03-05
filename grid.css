@@ -1,0 +1,12 @@
+div.container.row{
+    background-color: beige;
+    height:40px;
+}
+main.row.gutter{
+    background-color: beige;
+    height:40px;
+}
+article.col.span_4{
+    background-color: beige;
+    height: 40px;
+}

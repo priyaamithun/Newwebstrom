@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>JavaScript Animation</title>
+    <link rel="stylesheet" href="animate.css">
+</head>
+<body>
+<h1>My First javaScript Animation</h1>
+<!--<div id="container">
+    <div id="animate" ></div>
+</div>
+    <button type="button" onclick="animation()">Click Me</button>
+<script>
+    function animation(){
+        var pos=0;
+        var elem = document.getElementById("animate");
+        var id=setInterval(frame,5);
+        function frame(){
+            if(pos==350){
+                clearInterval(id);
+
+            }else{
+                pos++;
+                elem.style.top =pos+'px';
+                elem.style.left=pos+'px';
+            }
+        }
+
+
+
+    }
+
+<script>
+    function myfunction4(){
+        var name = document.getElementById("fname");
+        name.value=name.value.toUpperCase();
+
+
+    }
+</script>
+<p>please enter your name</p>
+<input type="text" id="fname" onchange="myfunction4()">
+<button id="mybtn">Click Me</button>
+
+<p id="demo"></p>
+<script>
+
+    var x =document.getElementById("mybtn")
+    x.addEventListener("click",displayDate);
+    x.addEventListener("click",method );
+        
+
+    function displayDate(){
+        document.getElementById("demo").innerHTML=Date();
+    }
+
+function method(){
+    alert("hello world");
+}-->
+
+<p id="demo"></p>
+<script>
+  window.addEventListener("resize",function(){
+
+        document.getElementById("demo").innerHTML=Math.random();
+    });
+
+
+
+
+
+
+
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</body>
+</html>

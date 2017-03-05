@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Ajax Sample</title>
+</head>
+<body>
+<div id="demo">
+<h1>Using XMLHttpRequest object</h1>
+
+
+<!--<button type="button" onclick="loadXMLDoc()">Change content</button>
+<script>
+    function loadXMLDoc () {
+var xmlhttp = new XMLHttpRequest();
+xmlhttp.onreadystatechange = function () {
+    if(this.readyState== 4 && this.status==200){
+        document.getElementById("demo").innerHTML = xmlhttp.responseText;
+}
+};
+xmlhttp.open("GET","Ajax_New.txt",true);
+xmlhttp.send();
+
+    }
+    </script>-->
+    <button type="button" onclick="loadDoc()" >Click Me</button>
+
+<!--<button type="button" onclick="loadDoc('Ajax_New.txt',Myfunction)" >Click Me</button>-->
+</div>
+
+<script>
+    /*function loadDoc(url,Myfunction) {
+        var xttp = new XMLHttpRequest();
+        xttp.onreadystatechange =  function () {
+            if(this.readyState==4 && this.status == 200){
+                Myfunction(this);
+            }
+        };
+        xttp.open("GET",url,true);
+        xttp.send();
+    }
+    function Myfunction (xttp) {
+
+         document.getElementById("demo").innerHTML=xttp.responseText;
+
+    }
+*/
+
+    function loadDoc () {
+        var xmlhttp = new XMLHttpRequest();
+        xmlhttp.onreadystatechange = function () {
+            if(this.readyState== 4 && this.status==200){
+                document.getElementById("demo").innerHTML = this.getResponseHeader("Last-Modified");
+            }
+        };
+        xmlhttp.open("GET","Ajax_New.txt",true);
+        xmlhttp.send();
+
+    }
+
+
+
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</body>
+</html>

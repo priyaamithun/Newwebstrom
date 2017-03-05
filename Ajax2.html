@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Ajax2</title>
+    <link rel="stylesheet" href="Ajax.css">
+
+</head>
+<body>
+
+<h1>Ajax Example</h1>
+<button type="button" onclick="myload()">Get my songs Collection</button>
+<br><br>
+<table id="demo"></table>
+<script>
+    function myload(){
+        var xttp = new XMLHttpRequest();
+        xttp.onreadystatechange = function (){
+            if(this.readyState== 4 && this.status==200){
+                myNewFunction(this);
+            }
+
+        };
+        xttp.open("GET","Ajax.xml",true);
+        xttp.send();
+    }
+function myNewFunction(xml){
+        var i;
+        var XmlDoc = xml.responseXML;
+        var table = "<tr><th>ARTIST</th><th>TITLE</th></tr>";
+        var x = XmlDoc.getElementsByTagName("SONG");
+for(i=0;i<x.length;i++){
+    table += "<><td>"+ x[i].getElementsByTagName("ARTIST")[0].childNodes[0].nodeValue+ "</td><td>"+x[i].getElementsByTagName("TITLE")[0].childNodes[0].nodeValue+"</td></tr>";
+}
+document.getElementById("demo").innerHTML = table;
+
+}
+</script>
+</body>
+</html>

@@ -1,0 +1,4 @@
+
+AJAX
+
+HI javascript i`m practising AJAX

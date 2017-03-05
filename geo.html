@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Geo location</title>
+</head>
+<body>
+<script>
+    navigator.geolocation.getCurrentPosition(function (loc) {
+        console.log(loc.coords.latitude +''+loc.coords.longitude);
+    })
+
+
+
+</script>
+</body>
+</html>
